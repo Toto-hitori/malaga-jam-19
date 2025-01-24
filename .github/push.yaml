@@ -5,8 +5,8 @@ on:
     tags:
       - "release-*"
 env:
-  ITCH_USERNAME: toto-hitori
-  ITCH_GAME_ID: test-game
+  ITCH_USERNAME: arive
+  ITCH_GAME_ID: placeholder
 jobs:
   deploy:
     runs-on: ubuntu-latest
