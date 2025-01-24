@@ -2,8 +2,8 @@ name: Deploy
 
 on:
   push:
-    tags:
-      - "release-*"
+    branches:
+      - main
 env:
   ITCH_USERNAME: arive
   ITCH_GAME_ID: placeholder
