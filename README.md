@@ -1,6 +1,5 @@
-# Narrat Template
-
-Template app for [Narrat](https://github.com/nialna/narrat).
+# Malaga Jam 19
+This is our submission for the Malaga Jam Weekend 19!
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 
