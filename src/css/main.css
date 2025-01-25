@@ -12,3 +12,6 @@
 }
 
 /* Add any other CSS you want here */
+.passive-skill-check {
+  display: none;
+}
