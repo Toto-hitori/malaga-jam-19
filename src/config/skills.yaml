@@ -1,4 +1,10 @@
-skills: {}
+skills:
+  moribilidad:
+    name: Moribilidad
+    description: uwu
+    startingLevel: 0
+    icon: public\img\ui\button-prompts\gamepad\facebutton-top.png
+    hidden: true
 skillChecks:
   rollRange: 100
   skillMultiplier: 10
