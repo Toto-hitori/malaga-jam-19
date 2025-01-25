@@ -19,8 +19,8 @@ options:
     - [12, "Near Impossible"]
 
 skillChecks:
-  muerte:
+  morirse:
     skill: Moribilidad
     difficulty: 2
-    hideAfterRoll: true
+    hideAfterRoll: false
     repeteable: true
