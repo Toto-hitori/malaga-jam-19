@@ -1,11 +1,117 @@
 main:
-  "Hello world"
-  set data.Miau (random 0 100)
-  if (roll muerte moribilidad 90):
+  "Texto de inicio"
+  jump niña
+
+niña:
+  choice:
+    ""
+    "¿De dónde vienes?"
+      talk burbuja idle ""
+    "¿Cuál es tu Pokémon favorito?"
+      talk burbuja idle ""
+    "*Se la intenta comer*"
+      talk burbuja idle ""
+      jump muerte
+  if (roll morirse moribilidad 90 repeatable):
     jump muerte
-    "This line only appears if you passed a hidden passive skill check"
-  set_screen game 0 slide-top 1000
-  "(This game is empty so nothing will happen past this point. Open game.narrat to start editing)"
+  choice:
+    ""
+    "¿Mola flotar?"
+      talk burbuja idle ""
+    "¿Puedes pegarte a otra y formar un culo?"
+      talk burbuja idle ""
+    "¿Cómo puedo ser como tú?"
+      talk burbuja idle ""
+  if (roll morirse moribilidad 90 repeatable):
+    jump muerte
+  choice:
+    ""
+    "¿Duele?"
+      talk burbuja idle ""
+    "¿Qué pasa si te toco?"
+      talk burbuja idle ""
+      jump muerte
+    "¿Tienes juegos en el móvil?"
+      talk burbuja idle ""
+  if (roll morirse moribilidad 90 repeatable):
+    jump muerte
+  choice:
+    ""
+    "¡Yo también quiero!"
+      talk burbuja idle ""
+    "¿Cuándo vas a explotar?"
+      talk burbuja idle ""
+      jump muerte
+    "¿Por qué llevas un arcoíris?"
+      talk burbuja idle ""
+    if (roll morirse moribilidad 90 repeatable):
+      jump muerte
+  choice:
+    ""
+    "¿Cuánto puedes aguantar sin respirar?"
+      talk burbuja idle ""
+    "¡Pop!"
+      talk burbuja idle ""
+    "¿Cómo eres por dentro?"
+      talk burbuja idle ""
+    if (roll morirse moribilidad 90 repeatable):
+      jump muerte
+
+
+abuela:
+  "Texto de inicio"
+  choice:
+    ""
+    ""
+      talk burbuja idle ""
+    ""
+      talk burbuja idle ""
+    ""
+      talk burbuja idle ""
+    if (roll morirse moribilidad 90 repeatable):
+      jump muerte
+  choice:
+    ""
+    ""
+      talk burbuja idle ""
+    ""
+      talk burbuja idle ""
+    ""
+      talk burbuja idle ""
+    if (roll morirse moribilidad 90 repeatable):
+      jump muerte
+  choice:
+    ""
+    ""
+      talk burbuja idle ""
+    ""
+      talk burbuja idle ""
+    ""
+      talk burbuja idle ""
+    if (roll morirse moribilidad 90 repeatable):
+      jump muerte
+  choice:
+    ""
+    ""
+      talk burbuja idle ""
+    ""
+      talk burbuja idle ""
+    ""
+      talk burbuja idle ""
+    if (roll morirse moribilidad 90 repeatable):
+      jump muerte
+  choice:
+    ""
+    ""
+      talk burbuja idle ""
+    ""
+      talk burbuja idle ""
+    ""
+      talk burbuja idle ""
+    if (roll morirse moribilidad 90 repeatable):
+      jump muerte
 
 muerte:
-  "oh no"
+  "¡Pop!"
+  "Oh no, moriste"
+  set_screen parque 0 slide-top 1000

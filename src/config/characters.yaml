@@ -3,9 +3,21 @@ config:
   imagesPath: img/characters/
 characters:
   game:
-    name: ''
+    name: ""
     color: white
   player:
     style:
       color: orange
-    name: You
+    name: you
+  niña:
+    style:
+      color: blue
+    name: Niña
+  abuela:
+    style:
+      color: green
+    name: Abuela
+  burbuja:
+    style:
+      color: pink
+    name: Burbuja
