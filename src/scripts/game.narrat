@@ -1,5 +1,5 @@
 main:
-  jump parte_niña
+  // jump parte_abuela
   "¡Hola, ricura!"
   "Estás a punto de jugar a ‘Memorias de una Burbuja’."
   "¡Eso es la hostia!" 
@@ -58,21 +58,23 @@ niña2:
     ""
     "¿Duele?"
       think burbuja idle "Duele, pero se termina pasando."
+      jump niña3
     "¿Qué pasa si te toco?"
       jump muerteParque
     "¿Tienes juegos en el móvil?"
-      think burbuja idle "[B] Solamente ‘Puzzle Bobble’, ‘Puzzle Bobble part 2’, y ‘Puzzle Bobble: el Despertar de la Fuerza’."
-  jump niña3
+      think burbuja idle "Solamente ‘Puzzle Bobble’, ‘Puzzle Bobble part 2’, y ‘Puzzle Bobble: el Despertar de la Fuerza’."
+      jump niña3
 niña3:
   choice:
     ""
-    "¿Duele?"
-      think burbuja idle ""
-    "¿Qué pasa si te toco?"
-      think burbuja idle ""
-      jump muerteParque
-    "¿Tienes juegos en el móvil?"
-      think burbuja idle ""
+    "¿Cómo podría crear la burbuja más grande del mundo? "
+      think burbuja idle "Una buena manera de hacerlo sería con el pompero más grande del mundo."
+    "¿Por qué eres tan bonita?"
+      think burbuja idle "Muchas gracias, linda, pero la belleza está en los ojos de quien mira."
+    "¿A dónde vas?"
+      think burbuja idle "A donde el viento me lleve."
+      think niña idle "¡Qué bonito! ¿Y a dónde te lleva?"
+      think burbuja idle "… A Madrid :("
   if (roll morirse moribilidad 90 repeatable):
     jump muerteParque
   choice:
@@ -82,33 +84,56 @@ niña3:
       think niña idle "Ya…"
       think burbuja idle "..."
       think niña idle "¿Y cuál es esa manera?"
-      think burbuja idle ""
-      think niña idle ""
-    "¡Yo también quiero!"
-      think burbuja idle ""
+      think burbuja idle "… ¿intentar asustarme?"
+      think niña idle "Ah, claro. ¡PUERCOESPÍN!"
+      think burbuja idle "¿Perdón?"
+      think niña idle "Pensé que a lo mejor te asustaría algo con pinchos… ¿Sabes quién es Sonic?"
+      think burbuja idle "Creo que ha llegado el momento de cambiar de tema. "
     "¿Cuándo vas a explotar?"
-      think burbuja idle ""
+      think burbuja idle "En cualquier momento, rapaz."
       jump muerteParque
     "¿Por qué llevas un arcoíris?"
-      think burbuja idle ""
+      think burbuja idle "La iridiscencia es un fenómeno óptico caracterizado como la propiedad de ciertas superficies en las cuales el tono de la luz varía de acuerdo al ángulo desde el que se observa la superficie. Es causada por múltiples reflexiones de la luz en múltiples superficies semitransparentes, donde los subsecuentes cambios de fase e interferencia de las reflexiones modulan la luz por la ampliación o atenuación de las diferentes longitudes de onda, ¿no? Pues eso."
     if (roll morirse moribilidad 90 repeatable):
       jump muerteParque
   choice:
     ""
     "¿Cuánto puedes aguantar sin respirar?"
-      think burbuja idle ""
+      think burbuja idle "Hasta que se me termine el aire que tengo dentro."
     "¡Pop!"
-      think burbuja idle ""
+      think burbuja idle "Pop."
+      think niña idle "¿¡POP!?"
+      think burbuja idle "Pop. [solemne]"
     "¿Cómo eres por dentro?"
-      think burbuja idle ""
+      think burbuja idle "Huelo más o menos igual que el interior de tus pulmones."
+      think niña idle "¡¡¡Puaj!!!"
+      think burbuja idle "Exacto."
     if (roll morirse moribilidad 90 repeatable):
       jump muerteParque
+  delete_sprite $data.my_sprite
+  delete_sprite $data.my_text
   jump parte_abuela
 
 parte_abuela:
-//  set_screen parque 0 slide-top 1000
+  set_screen cocina 0 slide-top 1000
+  set data.my_sprite (create_sprite img/characters/abuela-bubble-idle.GIF -250 0 50 50)
+  set data.my_text (create_object 0 0 $data.my_sprite) 
   play music musicaCocina
-  "Texto de inicio"
+
+  "Mientras las lentejas reposan unos minutitos y el fogón termina de hacer lo suyo con las patatas estofadas, una mujer se seca las manos con un trapo atado a la cinta de su delantal."
+  "Acto seguido se asoma por la ventana ubicada justo delante de la encimera y curiosea con ojo avizor."
+  "Al otro lado, en un parquecito algunos metros más abajo, una niña se entretiene con un pompero."
+  "No cualquier niña, sin embargo: su nieta."
+  "La abuela se distrae unos minutos contemplando, con una mezcla de ternura y melancolía, esa estampa costumbrista, hasta que un sonido burbujeante la devuelve de nuevo al interior de la cocina."
+  "Sobre el fuego, la cazuela que almacena el puchero tambalea, señal de que la buena magia culinaria está ocurriendo en su interior. "
+  "La mujer levanta la tapa esperando sublimarse en los aromas del guiso dominical cuando, para su absoluta sorpresa, una de las burbujas que forma el lento hervir culinario atrae por completo su atención:"
+  think abuela idle "…¿Hola?"
+  think burbuja idle "Buenos medios días, reina."
+  think abuela idle "¡Santa madre de Dios bendito!"
+  think burbuja idle "Jeje, así es. ¿Sorprendida?"
+  think abuela idle "Descolocada, más bien. ¿Qué hago hablando con una burbuja del estofado? ¿Me he quedado dormida mirando por la ventana? Por favor, si me ha dado un apechusque dímelo sin rodeos."
+  think burbuja idle "Está todo bien, querida, no te me preocupes ni un poco. Simplemente pensé en hacerte compañía un tiempito mientras la comida terminada de prepararse. ¿Te gustaría que hablemos de alguna cosita?"
+  think abuela idle "Pues, ahora que lo dices..."
   choice:
     ""
     ""
