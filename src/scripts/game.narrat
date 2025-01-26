@@ -39,6 +39,8 @@ parte_niña:
       jump muerteParque
   if (roll morirse moribilidad 90 repeatable):
     jump muerteParque
+  jump niña2
+niña2:
   choice:
     ""
     "¿Mola flotar?"
@@ -60,6 +62,17 @@ parte_niña:
       jump muerteParque
     "¿Tienes juegos en el móvil?"
       think burbuja idle "[B] Solamente ‘Puzzle Bobble’, ‘Puzzle Bobble part 2’, y ‘Puzzle Bobble: el Despertar de la Fuerza’."
+  jump niña3
+niña3:
+  choice:
+    ""
+    "¿Duele?"
+      think burbuja idle ""
+    "¿Qué pasa si te toco?"
+      think burbuja idle ""
+      jump muerteParque
+    "¿Tienes juegos en el móvil?"
+      think burbuja idle ""
   if (roll morirse moribilidad 90 repeatable):
     jump muerteParque
   choice:
@@ -71,6 +84,8 @@ parte_niña:
       think niña idle "¿Y cuál es esa manera?"
       think burbuja idle ""
       think niña idle ""
+    "¡Yo también quiero!"
+      think burbuja idle ""
     "¿Cuándo vas a explotar?"
       think burbuja idle ""
       jump muerteParque
@@ -88,7 +103,7 @@ parte_niña:
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
       jump muerteParque
-
+  jump parte_abuela
 
 parte_abuela:
 //  set_screen parque 0 slide-top 1000
@@ -103,7 +118,7 @@ parte_abuela:
     ""
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
-      jump muerteParque
+      jump muerteCocina
   choice:
     ""
     ""
@@ -113,7 +128,7 @@ parte_abuela:
     ""
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
-      jump muerteParque
+      jump muerteCocina
   choice:
     ""
     ""
@@ -123,7 +138,7 @@ parte_abuela:
     ""
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
-      jump muerteParque
+      jump muerteCocina
   choice:
     ""
     ""
@@ -133,7 +148,7 @@ parte_abuela:
     ""
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
-      jump muerteParque
+      jump muerteCocina
   choice:
     ""
     ""
@@ -143,12 +158,23 @@ parte_abuela:
     ""
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
-      jump muerte
-
+      jump muerteCocina
 muerteParque:
   delete_sprite $data.my_sprite
   delete_sprite $data.my_text
   set data.my_sprite (create_sprite img/characters/park-bubble-pop.GIF -250 0)
+  set data.my_text (create_object 0 0 $data.my_sprite) 
+  wait 200
+  play sound sonidoPop
+  wait 200 
+  delete_sprite $data.my_sprite
+  delete_sprite $data.my_text
+  ""
+  set_screen game 0 slide-top 1000
+muerteCocina:
+  delete_sprite $data.my_sprite
+  delete_sprite $data.my_text
+  set data.my_sprite (create_sprite img/characters/abuela-bubble-pop.GIF -250 0)
   set data.my_text (create_object 0 0 $data.my_sprite) 
   wait 200
   play sound sonidoPop
