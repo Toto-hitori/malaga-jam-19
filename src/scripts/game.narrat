@@ -26,15 +26,12 @@ parte_niña:
   think burbuja idle "Hola, maja! ¿Qué tal todo?"
   think niña idle "¡Guay! Nunca antes había hablado con una pompa."
   think burbuja idle "Bueno, siempre tiene que haber una primera vez para todo, jeje. ¿Nunca quisiste preguntarle nada a una burbuja? Pues ahora puedes, así que ¡dispara!"
-  jump niña1
-  
-niña1:
   choice:
     ""
     "¿De dónde vienes?":
       think burbuja idle "Y tú me lo preguntas? ¡Fuiste tú quien me creó! De dentro del pompero, supongo."
     "¿Cuál es tu Pokémon favorito?":
-      talk burbuja idle "Dewpider mola más que mi puta madre."
+      think burbuja idle "Dewpider mola más que mi puta madre."
       think niña idle "Guau, has dicho una palabrota."
       think burbuja idle "¡No, no! He dicho… Mi <i>fruta madre</i>."
       think niña idle "...ya."
@@ -42,42 +39,45 @@ niña1:
       jump muerteParque
   if (roll morirse moribilidad 90 repeatable):
     jump muerteParque
- 
- niña2:
   choice:
     ""
     "¿Mola flotar?"
       think burbuja idle "Está bastante guapo, pero no sé si sería algo para ti… Te veo algo densa, querida."
-    "¿Puedes pegarte a otra y formar un culo?"
-      think burbuja idle ""
+    "¿Qué es lo más guay que existe en el mundo?"
+      think burbuja idle "Sin duda: un perro con gafas de sol manteniendo el equilibrio con tres latas de Coca-Cola apiladas sobre la cabeza."
+      think niña idle "¡Guau! ¿Pero eso existe de verdad?"
+      think burbuja idle "¡Pues claro! Hay uno justo pasando por detrás de ti."
+      think niña idle "[N] Sí, claro. Esa es la mentira más vieja del mundo, tú a mí no me engañas."
     "¿Cómo puedo ser como tú?"
       think burbuja idle "Puedo decirte cómo no ser como yo: bebiéndote una botella de jabón. De verdad, no lo hagas. Por favor. No."
   if (roll morirse moribilidad 90 repeatable):
     jump muerteParque
-  
-  niña3:
-    choice:
-      ""
-      "¿Duele?"
-        think burbuja idle ""
-      "¿Qué pasa si te toco?"
-        think burbuja idle ""
-        jump muerteParque
-      "¿Tienes juegos en el móvil?"
-        think burbuja idle ""
+  choice:
+    ""
+    "¿Duele?"
+      think burbuja idle "Duele, pero se termina pasando."
+    "¿Qué pasa si te toco?"
+      jump muerteParque
+    "¿Tienes juegos en el móvil?"
+      think burbuja idle "[B] Solamente ‘Puzzle Bobble’, ‘Puzzle Bobble part 2’, y ‘Puzzle Bobble: el Despertar de la Fuerza’."
+  if (roll morirse moribilidad 90 repeatable):
+    jump muerteParque
+  choice:
+    ""
+    "Si te asusto… ¿Explotas?"
+      think burbuja idle "Solamente hay una manera de saberlo."
+      think niña idle "Ya…"
+      think burbuja idle "..."
+      think niña idle "¿Y cuál es esa manera?"
+      think burbuja idle ""
+      think niña idle ""
+    "¿Cuándo vas a explotar?"
+      think burbuja idle ""
+      jump muerteParque
+    "¿Por qué llevas un arcoíris?"
+      think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
       jump muerteParque
-    choice:
-      ""
-      "¡Yo también quiero!"
-        think burbuja idle ""
-      "¿Cuándo vas a explotar?"
-        think burbuja idle ""
-        jump muerteParque
-      "¿Por qué llevas un arcoíris?"
-        think burbuja idle ""
-      if (roll morirse moribilidad 90 repeatable):
-        jump muerteParque
   choice:
     ""
     "¿Cuánto puedes aguantar sin respirar?"
@@ -92,10 +92,6 @@ niña1:
 
 parte_abuela:
 //  set_screen parque 0 slide-top 1000
-  delete_sprite $data.my_sprite
-  delete_sprite $data.my_text
-  set data.my_sprite (create_sprite img/characters/abuela-bubble-idle.GIF -250 0)
-  set data.my_text (create_object 0 0 $data.my_sprite) 
   play music musicaCocina
   "Texto de inicio"
   choice:
@@ -107,7 +103,7 @@ parte_abuela:
     ""
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
-      jump muerte
+      jump muerteParque
   choice:
     ""
     ""
@@ -117,7 +113,7 @@ parte_abuela:
     ""
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
-      jump muerte
+      jump muerteParque
   choice:
     ""
     ""
@@ -127,7 +123,7 @@ parte_abuela:
     ""
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
-      jump muerte
+      jump muerteParque
   choice:
     ""
     ""
@@ -137,7 +133,7 @@ parte_abuela:
     ""
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
-      jump muerte
+      jump muerteParque
   choice:
     ""
     ""
