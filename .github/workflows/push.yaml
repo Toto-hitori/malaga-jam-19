@@ -6,7 +6,7 @@ on:
       - main
 env:
   ITCH_USERNAME: arive
-  ITCH_GAME_ID: placeholder
+  ITCH_GAME_ID: memorias-burbuja
 jobs:
   deploy:
     runs-on: ubuntu-latest
