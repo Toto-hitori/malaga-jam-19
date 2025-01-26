@@ -1,11 +1,31 @@
 main:
-  "Texto de inicio" // no sé si el texto de inicio irá en otra escena o en el parque directamente
+  jump parte_niña
+  "¡Hola, ricura!"
+  "Estás a punto de jugar a ‘Memorias de una Burbuja’."
+  "¡Eso es la hostia!" 
+  "Muchas gracias (muac)."
+  "Antes de comenzar, sin embargo, una cosita importante: como buena burbuja, la pompa con la que hablarás está condenada a explotar."
+  "Puede ocurrir en cualquier momento y, de hecho, cuanto más tiempo pase, más probable será que esto suceda."
+  "Si, por lo que sea, el estallido llega pero te has quedado con ganas de preguntarle más cosas a la burbuja, no te preocupes."
+  "La experiencia volverá a comenzar en unos brevísimos instantes, así que siéntete libre de repetirla tanto como quieras."
   jump parte_niña
 
 parte_niña:
+  set_screen parque 0 slide-top 1000
   play music musicaParque
   set data.my_sprite (create_sprite img/characters/park-bubble-idle.GIF -250 0)
   set data.my_text (create_object 0 0 $data.my_sprite) 
+  "En un parque de un indeterminado pueblo español, una niña juega con su pompero."
+  "La muchacha, de unos ocho años de edad, se entretiene formando burbujas con el rudimentario juguete mientras espera a que su abuela prepare la comida."
+  "Si por ella fuera estaría haciendo cualquier otra cosa, pero aunque en esa localidad es tradición comer tarde, todas sus amistades subieron a sus respectivos hogares hace ya algún rato."
+  "Así, la chiquilla hunde sistemáticamente el artilugio en el agua jabonosa y sopla, con la pereza característica de un domingo por la tarde, hasta generar frágiles cápsulas de su propio aliento."
+  "En uno de estos vaivenes rítmicos, la niña siente, sin saber muy bien cómo ni por qué, que algo distinto acaba de ocurrir."
+  "Esa última burbuja, en apariencia idéntica al resto, desprende un enigmático carisma que la encandila."
+  "Tal vez por su aspecto de esfera imperturbable, o tal vez por lo reflectante de su superficie transparente, la pequeña siente la imperiosa necesidad de dirigirse directamente a la entidad que flota ante ella y exclamar:"
+  think niña idle "¡Hola!"
+  think burbuja idle "Hola, maja! ¿Qué tal todo?"
+  think niña idle "¡Guay! Nunca antes había hablado con una pompa."
+  think burbuja idle "Bueno, siempre tiene que haber una primera vez para todo, jeje. ¿Nunca quisiste preguntarle nada a una burbuja? Pues ahora puedes, así que ¡dispara!"
   choice:
     ""
     "¿De dónde vienes?"
@@ -62,6 +82,7 @@ parte_niña:
   jump parte_abuela
 
 parte_abuela:
+//  set_screen parque 0 slide-top 1000
   play music musicaCocina
   delete_sprite $data.my_sprite
   delete_sprite $data.my_text

@@ -15,3 +15,7 @@
 .passive-skill-check {
   display: none;
 }
+
+.think-command {
+  color: var(--text-color) !important;
+}
