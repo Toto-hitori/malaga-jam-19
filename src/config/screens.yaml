@@ -5,3 +5,5 @@ screens:
     background: img/backgrounds/map.webp
   parque:
     background: img/backgrounds/park.JPG
+  cocina:
+    background: img/backgrounds/cocina.png

@@ -88,13 +88,13 @@ niña3:
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
       jump muerteParque
+  delete_sprite $data.my_sprite
+  delete_sprite $data.my_text
   jump parte_abuela
 
 parte_abuela:
-//  set_screen parque 0 slide-top 1000
-  delete_sprite $data.my_sprite
-  delete_sprite $data.my_text
-  set data.my_sprite (create_sprite img/characters/abuela-bubble-idle.GIF -250 0)
+  set_screen cocina 0 slide-top 1000
+  set data.my_sprite (create_sprite img/characters/abuela-bubble-idle.GIF -250 0 50 50)
   set data.my_text (create_object 0 0 $data.my_sprite) 
   play music musicaCocina
   "Texto de inicio"
