@@ -116,6 +116,14 @@ parte_abuela:
       jump muerte
 
 muerte:
+  delete_sprite $data.my_sprite
+  delete_sprite $data.my_text
+  set data.my_sprite (create_sprite img/characters/park-bubble-pop.GIF -250 0)
+  set data.my_text (create_object 0 0 $data.my_sprite) 
+  wait 200
   play sound sonidoPop
+  wait 200 
+  delete_sprite $data.my_sprite
+  delete_sprite $data.my_text
   ""
   set_screen game 0 slide-top 1000
