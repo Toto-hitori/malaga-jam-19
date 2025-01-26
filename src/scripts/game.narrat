@@ -59,10 +59,14 @@ parte_niña:
       talk burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
       jump muerte
-
+  jump parte_abuela
 
 parte_abuela:
   play music musicaCocina
+  delete_sprite $data.my_sprite
+  delete_sprite $data.my_text
+  set data.my_sprite (create_sprite img/characters/abuela-bubble-idle.GIF -250 0)
+  set data.my_text (create_object 0 0 $data.my_sprite) 
   "Texto de inicio"
   choice:
     ""
