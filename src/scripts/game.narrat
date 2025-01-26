@@ -1,5 +1,5 @@
 main:
-  // jump parte_abuela
+  jump parte_niña
   "¡Hola, ricura!"
   "Estás a punto de jugar a ‘Memorias de una Burbuja’."
   "¡Eso es la hostia!" 
@@ -103,7 +103,7 @@ niña3:
     "¡Pop!"
       think burbuja idle "Pop."
       think niña idle "¿¡POP!?"
-      think burbuja idle "Pop. [solemne]"
+      think burbuja idle "Pop. <i>[solemne]</i>"
     "¿Cómo eres por dentro?"
       think burbuja idle "Huelo más o menos igual que el interior de tus pulmones."
       think niña idle "¡¡¡Puaj!!!"
@@ -136,54 +136,60 @@ parte_abuela:
   think abuela idle "Pues, ahora que lo dices..."
   choice:
     ""
-    ""
-      think burbuja idle ""
-    ""
-      think burbuja idle ""
-    ""
-      think burbuja idle ""
+    "¿De dónde has salido?"
+      think burbuja idle "Ebullición, querida."
+      think abuela idle "Aramis, la más grande."
+    "*<i>Chirrido de gárgola</i>*"
+      think burbuja idle "¿Qué te pasa, lumbreras?"
+    "*<i>Se queda sentada mirando la burbuja</i>*"
+      jump muerteCocina
     if (roll morirse moribilidad 90 repeatable):
       jump muerteCocina
   choice:
     ""
-    ""
-      think burbuja idle ""
-    ""
-      think burbuja idle ""
-    ""
-      think burbuja idle ""
+    "¿Cuánto te quedas?"
+      think burbuja idle "Pues… Al puchero le quedan unos minutos todavía. Tenemos tiempo de charlar un ratín."
+    "¿Tú de quién eres?"
+      think burbuja idle "¡De Mistol!"
+    "*<i>La intenta pellizcar como si fuese un moflete.</i>*"
+      jump muerteCocina
     if (roll morirse moribilidad 90 repeatable):
       jump muerteCocina
   choice:
     ""
-    ""
-      think burbuja idle ""
-    ""
-      think burbuja idle ""
-    ""
-      think burbuja idle ""
+    "*<i>Intentando remover el contenido del puchero con una espátula</i>*  ¿Te importaría apartarte, <i>por favor?</i>"
+      think burbuja idle "Guau, la cursiva de ese por favor me ha dolido. Extradiegéticamente, quiero decir."
+    "¿Niña, quieres una rebequita? Que dentro de nada empieza a refrescar."
+      think burbuja idle "La verdad que aquí se está muy calentito, pero agradezco el gesto."
+    "¿Te vas a cargar mi puchero?"
+      think burbuja idle "Señora, YO soy el puchero."
     if (roll morirse moribilidad 90 repeatable):
       jump muerteCocina
   choice:
     ""
-    ""
-      think burbuja idle ""
-    ""
-      think burbuja idle ""
-    ""
-      think burbuja idle ""
+    "¿Estás comiendo suficiente? Te veo un poco flaca."
+      think burbuja idle "Señora, literalmente no puedo ser más esférica."
+    "¿Cómo de fuerte te gusta el café?"
+      think burbuja idle "Más fuerte que el vinagre y más caliente que un tobogán en verano."
+    "¿Te frío un huevo?"
+      think burbuja idle "No, gracias."
+      think abuela idle "Ups, perdona si te he molestado. No pretendía."
+      think burbuja idle "Tranquila, está bien. Es solo que en el aceite de freír vive una burbuja con la que fui a la universidad y… Bueno, no me llevo del todo bien. "
+      think abuela idle "Claro, claro. Entiendo."
     if (roll morirse moribilidad 90 repeatable):
       jump muerteCocina
   choice:
     ""
-    ""
-      think burbuja idle ""
-    ""
-      think burbuja idle ""
-    ""
-      think burbuja idle ""
-    if (roll morirse moribilidad 90 repeatable):
+    "¿Te da miedo que te exploten?"
+      think burbuja idle "Pues fíjate, estando como están las cosas, mientras no me exploten en lo laboral, yo voy tirando."
+      think abuela idle "VAYA."
+      think burbuja idle "¿Quién dijo que por ser una burbuja no podía tener colmillos?"
+    "¿Tú no dejarás cerco en los muebles?"
+      think burbuja idle "Señora, yo soy el némesis de los cercos."
+    "¿Qué hace que le gustes a todo el mundo?"
+      think burbuja idle "Lo cierto, querida, es que lo efímero es precisamente la esencia de mi encanto."
       jump muerteCocina
+  jump muerteCocina
 muerteParque:
   delete_sprite $data.my_sprite
   delete_sprite $data.my_text
@@ -195,7 +201,7 @@ muerteParque:
   delete_sprite $data.my_sprite
   delete_sprite $data.my_text
   ""
-  set_screen game 0 slide-top 1000
+  jump parte_abuela
 muerteCocina:
   delete_sprite $data.my_sprite
   delete_sprite $data.my_text
@@ -207,4 +213,3 @@ muerteCocina:
   delete_sprite $data.my_sprite
   delete_sprite $data.my_text
   ""
-  set_screen game 0 slide-top 1000
