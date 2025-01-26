@@ -4,6 +4,8 @@ main:
 
 parte_niña:
   play music musicaParque
+  set data.my_sprite (create_sprite img/characters/park-bubble-idle.GIF -250 0)
+  set data.my_text (create_object 0 0 $data.my_sprite) 
   choice:
     ""
     "¿De dónde vienes?"
