@@ -42,8 +42,8 @@ niña1:
       jump muerteParque
   if (roll morirse moribilidad 90 repeatable):
     jump muerteParque
- 
- niña2:
+  jump niña2
+niña2:
   choice:
     ""
     "¿Mola flotar?"
@@ -54,30 +54,30 @@ niña1:
       think burbuja idle "Puedo decirte cómo no ser como yo: bebiéndote una botella de jabón. De verdad, no lo hagas. Por favor. No."
   if (roll morirse moribilidad 90 repeatable):
     jump muerteParque
-  
-  niña3:
-    choice:
-      ""
-      "¿Duele?"
-        think burbuja idle ""
-      "¿Qué pasa si te toco?"
-        think burbuja idle ""
-        jump muerteParque
-      "¿Tienes juegos en el móvil?"
-        think burbuja idle ""
+  jump niña3
+niña3:
+  choice:
+    ""
+    "¿Duele?"
+      think burbuja idle ""
+    "¿Qué pasa si te toco?"
+      think burbuja idle ""
+      jump muerteParque
+    "¿Tienes juegos en el móvil?"
+      think burbuja idle ""
+  if (roll morirse moribilidad 90 repeatable):
+    jump muerteParque
+  choice:
+    ""
+    "¡Yo también quiero!"
+      think burbuja idle ""
+    "¿Cuándo vas a explotar?"
+      think burbuja idle ""
+      jump muerteParque
+    "¿Por qué llevas un arcoíris?"
+      think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
       jump muerteParque
-    choice:
-      ""
-      "¡Yo también quiero!"
-        think burbuja idle ""
-      "¿Cuándo vas a explotar?"
-        think burbuja idle ""
-        jump muerteParque
-      "¿Por qué llevas un arcoíris?"
-        think burbuja idle ""
-      if (roll morirse moribilidad 90 repeatable):
-        jump muerteParque
   choice:
     ""
     "¿Cuánto puedes aguantar sin respirar?"
@@ -88,7 +88,7 @@ niña1:
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
       jump muerteParque
-
+  jump parte_abuela
 
 parte_abuela:
 //  set_screen parque 0 slide-top 1000
@@ -107,7 +107,7 @@ parte_abuela:
     ""
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
-      jump muerte
+      jump muerteCocina
   choice:
     ""
     ""
@@ -117,7 +117,7 @@ parte_abuela:
     ""
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
-      jump muerte
+      jump muerteCocina
   choice:
     ""
     ""
@@ -127,7 +127,7 @@ parte_abuela:
     ""
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
-      jump muerte
+      jump muerteCocina
   choice:
     ""
     ""
@@ -137,7 +137,7 @@ parte_abuela:
     ""
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
-      jump muerte
+      jump muerteCocina
   choice:
     ""
     ""
@@ -147,12 +147,23 @@ parte_abuela:
     ""
       think burbuja idle ""
     if (roll morirse moribilidad 90 repeatable):
-      jump muerte
-
+      jump muerteCocina
 muerteParque:
   delete_sprite $data.my_sprite
   delete_sprite $data.my_text
   set data.my_sprite (create_sprite img/characters/park-bubble-pop.GIF -250 0)
+  set data.my_text (create_object 0 0 $data.my_sprite) 
+  wait 200
+  play sound sonidoPop
+  wait 200 
+  delete_sprite $data.my_sprite
+  delete_sprite $data.my_text
+  ""
+  set_screen game 0 slide-top 1000
+muerteCocina:
+  delete_sprite $data.my_sprite
+  delete_sprite $data.my_text
+  set data.my_sprite (create_sprite img/characters/abuela-bubble-pop.GIF -250 0)
   set data.my_text (create_object 0 0 $data.my_sprite) 
   wait 200
   play sound sonidoPop
