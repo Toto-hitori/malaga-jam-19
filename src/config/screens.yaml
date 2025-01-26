@@ -1,6 +1,6 @@
 screens:
   default:
-    background: img/backgrounds/park.JPG
+    background: img/backgrounds/fondonegro.png
   game:
     background: img/backgrounds/map.webp
   parque:
