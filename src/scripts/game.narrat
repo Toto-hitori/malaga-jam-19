@@ -13,6 +13,8 @@ main:
 parte_niña:
   set_screen parque 0 slide-top 1000
   play music musicaParque
+  set data.my_sprite (create_sprite img/characters/park-bubble-idle.GIF -250 0)
+  set data.my_text (create_object 0 0 $data.my_sprite) 
   "En un parque de un indeterminado pueblo español, una niña juega con su pompero."
   "La muchacha, de unos ocho años de edad, se entretiene formando burbujas con el rudimentario juguete mientras espera a que su abuela prepare la comida."
   "Si por ella fuera estaría haciendo cualquier otra cosa, pero aunque en esa localidad es tradición comer tarde, todas sus amistades subieron a sus respectivos hogares hace ya algún rato."
@@ -135,6 +137,14 @@ parte_abuela:
       jump muerte
 
 muerte:
+  delete_sprite $data.my_sprite
+  delete_sprite $data.my_text
+  set data.my_sprite (create_sprite img/characters/park-bubble-pop.GIF -250 0)
+  set data.my_text (create_object 0 0 $data.my_sprite) 
+  wait 200
   play sound sonidoPop
+  wait 200 
+  delete_sprite $data.my_sprite
+  delete_sprite $data.my_text
   ""
   set_screen game 0 slide-top 1000
