@@ -116,7 +116,7 @@ niña3:
 
 parte_abuela:
   set_screen cocina 0 slide-top 1000
-  set data.my_sprite (create_sprite img/characters/abuela-bubble-idle.GIF -250 0 50 50)
+  set data.my_sprite (create_sprite img/characters/abuela-bubble-idle.GIF -230 -20 50 50)
   set data.my_text (create_object 0 0 $data.my_sprite) 
   play music musicaCocina
 
