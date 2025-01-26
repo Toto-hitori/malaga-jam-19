@@ -1,8 +1,9 @@
 main:
-  "Texto de inicio"
-  jump niña
+  "Texto de inicio" // no sé si el texto de inicio irá en otra escena o en el parque directamente
+  jump parte_niña
 
-niña:
+parte_niña:
+  play music musicaParque
   choice:
     ""
     "¿De dónde vienes?"
@@ -58,7 +59,8 @@ niña:
       jump muerte
 
 
-abuela:
+parte_abuela:
+  play music musicaCocina
   "Texto de inicio"
   choice:
     ""
@@ -112,6 +114,6 @@ abuela:
       jump muerte
 
 muerte:
-  "¡Pop!"
-  "Oh no, moriste"
-  set_screen parque 0 slide-top 1000
+  play sound sonidoPop
+  ""
+  set_screen game 0 slide-top 1000

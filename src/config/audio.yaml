@@ -1,4 +1,13 @@
-files: {}
+files:
+  musicaParque:
+    loop: true
+    src: src\config\sonidos_parque.mp3
+  musicaCocina:
+    loop: true
+    src: src\config\sonidos_cocina.mp3
+  sonidoPop:
+    loop: false
+    src: src\config\soundpop.mp3 ## PLACEHOLDER
 options:
   volume: 0.5
   musicFadeInTime: 0.5

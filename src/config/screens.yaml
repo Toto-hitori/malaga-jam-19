@@ -1,6 +1,6 @@
 screens:
   default:
-    background: img/backgrounds/curtain.webp
+    background: img/backgrounds/park.JPG
   game:
     background: img/backgrounds/map.webp
   parque:
